@@ -1,4 +1,4 @@
-##########################################FCS analysis
+##########################################FCS analysis##########################################
 % load subjects information
 paras                                               = readtable('~\basicparas930.csv');
 N_sub                                               = size(paras,1);
