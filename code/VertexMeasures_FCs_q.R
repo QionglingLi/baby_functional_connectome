@@ -1,10 +1,3 @@
-# install.packages("nlme")
-# install.packages("mgcv")
-# install.packages("parallel")
-# install.packages("foreach")
-# install.packages("doParallel")
-# install.packages("tcltk")
-# install.packages("doSNOW")
 
 library(nlme)
 library(mgcv)
@@ -20,12 +13,12 @@ voxel <- as.numeric(voxel)
 
 # load data
 if (voxel==1) {
-Measure <- read.csv("/HeLabData2/qlli/project2/NodalMeasures/FCs/FCs.csv", nrows=1, header = FALSE) 
+Measure <- read.csv("~/NodalMeasures/FCs/FCs.csv", nrows=1, header = FALSE) 
 } else {
-Measure <- read.csv("/HeLabData2/qlli/project2/NodalMeasures/FCs/FCs.csv", nrows=1, skip=voxel-1, header = FALSE)
+Measure <- read.csv("~/NodalMeasures/FCs/FCs.csv", nrows=1, skip=voxel-1, header = FALSE)
 }
 
-Data <- read.csv("/HeLabData2/qlli/project2/NodalMeasures/FCs/basicparas930.csv")
+Data <- read.csv("~/NodalMeasures/FCs/basicparas930.csv")
 Data$sex <- as.factor(Data$sex)
 Data$site <- as.factor(Data$site)
 Data$sub_id <- as.factor(Data$sub_id)
@@ -39,11 +32,6 @@ sub_id=Data$sub_id
 Data$Measure <- t(Measure)
 mod_gam <- gam(Measure ~ s(scan_age, bs="cs", k=3) + sex + s(sub_id, bs="re") + site + mFD, 
                data=Data, method="REML", na.action="na.omit")
-
-## prediction with real age              
-# age_term = predict(mod_gam, type = 'terms')[, 's(scan_age)']
-# res_partial = residuals(mod_gam) + age_term
-# predvalue <- t(c(voxel,res_partial))
 
 # prediction with generative age
 Length=ncol(Measure)
