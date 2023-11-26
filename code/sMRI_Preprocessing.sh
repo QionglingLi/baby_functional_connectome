@@ -120,7 +120,7 @@ if [[ ! -f "$structDirectory"/"$subage"_"$Modality"_brain.nii.gz ]]; then
   fslmaths "$structDirectory"/"$subage"_"$Modality"_brain.nii.gz -bin "$structDirectory"/"$subage"_"$Modality"_mask.nii.gz
 fi
 
-# registration to nihpd_asym_template
+# registration to UNC_4D_template
 #if [[ ! -f "$structDirectory"/"$subage"_"$Modality"_nihpd_"$Tage"_"$modality"_"$MM"Warped.nii.gz ]]; then
 	echo "registration to "BCP-"$Tage"-"$modality".nii.gz
 	antsRegistrationSyN.sh -d 3 -f "$hirestemplate" \
