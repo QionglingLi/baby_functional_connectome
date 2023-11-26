@@ -48,8 +48,20 @@ for i = 1:N_sub
     FCs(i,:)                                        = sum(FC.*(ZD_ind~=0),1)./sum((ZD_ind~=0),1);    
 end
 save                                                ('~\output_distance\FCs.mat', 'FCs')
+%% 2. extract peak FCs
+pcor                                                = [-16 -60 18; -42 -14 42; -8 32 20; -18 28 24; -50 -2 -12; -12 10 -2]; 
+CoordinateMatrix                                    = round(CoordinateMatrix');
+    
+for p = 1:size(pcor,1)
+    peak_coor                                       = pcor(p,:);
+    [~,peak_ind]                                    = ismember(peak_coor,CoordinateMatrix,'rows');
+    mask_ind                                        = find(peak_ind==ind); % find peak location in gm mask
+    peakFCs(p,:)                                    = FCs(mask_ind,:);        
+end
 
-%% 2.show all predicted seed FC for real age
+writematrix                                         (peakFCs,'~\output_distance\FCS_k=3\peakFCs.csv')
+
+%% 3.show all predicted seed FC for real age
 for seed=1:6
     pred_table                                      = readtable(strcat('~\output_distance\FCS_k=3\seedFC\seedFC',num2str(seed),'\seedFC_predvalue.txt'));
     pred_table                                      = sortrows(pred_table,'Var1','ascend');
@@ -66,14 +78,14 @@ for seed=1:6
         FCsmap                                      = reshape(FCsmap, x, y, z);
         dimg                                        = gm_mask;
         dimg.img                                    = FCsmap;
-        save_nii                                    (dimg, ['~\output_distance\FCS_k=3\seedFC\seedFC',num2str(seed),...
+        save_nii                                    (dimg, ['F:\OneDrive - 北京师范大学\project2\output_distance\FCS_k=3\seedFC\seedFC',num2str(seed),...
                                                              '\allsub\seedFC',num2str(seed),'_pred_',num2str(i),'_',num2str(a_scan_age(i)),'w.nii']);
         
-        BrainVolume                                 = strcat('~\output_distance\FCS_k=3\seedFC\seedFC',num2str(seed),...
+        BrainVolume                                 = strcat('F:\OneDrive - 北京师范大学\project2\output_distance\FCS_k=3\seedFC\seedFC',num2str(seed),...
                                                              '\allsub\seedFC',num2str(seed),'_pred_',num2str(i),'_',num2str(a_scan_age(i)),'w.nii');
-        H_BrainNet                                  = BrainNet_MapCfg(Surf,BrainVolume,['~\output_distance\FCS_k=3\seedFC\seedFC',num2str(seed),'\Cfg_FC',num2str(seed),'.mat']);
+        H_BrainNet                                  = BrainNet_MapCfg(Surf,BrainVolume,['F:\OneDrive - 北京师范大学\project2\output_distance\FCS_k=3\seedFC\seedFC',num2str(seed),'\Cfg_FC',num2str(seed),'.mat']);
         colormap(cmap)
-        Gmap                                        = strcat('~\output_distance\FCS_k=3\seedFC\seedFC',num2str(seed),...
+        Gmap                                        = strcat('F:\OneDrive - 北京师范大学\project2\output_distance\FCS_k=3\seedFC\seedFC',num2str(seed),...
                                                              '\allsub\seedFC',num2str(seed),'_pred_',num2str(i),'_',num2str(a_scan_age(i)),'w.tif');
         saveas                                      (H_BrainNet,Gmap)
         clear BrainVolume H_BrainNet
@@ -81,18 +93,6 @@ for seed=1:6
     end
 end
 
-%% 3. extract peak FCs
-pcor                                                = [-16 -60 18; -42 -14 42; -8 32 20; -18 28 24; -50 -2 -12; -12 10 -2]; 
-CoordinateMatrix                                    = round(CoordinateMatrix');
-    
-for p = 1:size(pcor,1)
-    peak_coor                                       = pcor(p,:);
-    [~,peak_ind]                                    = ismember(peak_coor,CoordinateMatrix,'rows');
-    mask_ind                                        = find(peak_ind==ind); % find peak location in gm mask
-    peakFCs(p,:)                                    = FCs(mask_ind,:);        
-end
-
-writematrix                                         (peakFCs,'~\output_distance\FCS_k=3\test_peakFCs.csv')
 
 %% 4. compute seed based FC
 for i = N_sub:-1:1
@@ -188,4 +188,3 @@ for i = 1:N_sub
 end
 
 save                                                ('~\output_distance\FCsbins\FCs_bin.mat', 'FCs_bin')
-
