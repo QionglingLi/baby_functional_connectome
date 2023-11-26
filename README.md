@@ -6,7 +6,7 @@ Content includes standalone software, source code, and demo data. Due to the lar
 Please use the “add path” method in MATLAB, "pip install" method in Python and "install.packages()" method in R to add toolboxes and scripts in the code folder. These procedures are not time-consuming.
 # workflow
 1. smri preprocessing
-   sMRI were preprocessed with two images average, reorientation to fsl space, bias correction using N3, extract brain using skullStripping toolkit by Shifeng 2012 (https://www.nitrc.org/projects/skulltoolkit), and registration to UNC_4D_template (https://www.nitrc.org/projects/uncbcp_4d_atlas/).
+   sMRI were preprocessed with two images average, reorientation to fsl space, bias correction using N3, extract brain using [skullStripping toolkit](https://www.nitrc.org/projects/skulltoolkit) by Shifeng, and registration to [UNC_4D_template](https://www.nitrc.org/projects/uncbcp_4d_atlas/).
 2. fmri preprocessing
    
 4. FCS analysis
