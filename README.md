@@ -7,7 +7,7 @@ Please use the “add path” method in MATLAB, "pip install" method in Python a
 # workflow
 1. **smri preprocessing** sMRI were preprocessed with following steps: average two images, reorient to fsl space, bias correction using N3, extract brain using [skullStripping toolkit](https://www.nitrc.org/projects/skulltoolkit) by Shifeng, and registration to [UNC_4D_Volume_template](https://www.nitrc.org/projects/uncbcp_4d_atlas/). Details can be found in the manuscript and the [script](https://github.com/QionglingLi/baby_functional_connectome/blob/main/code/sMRI_Preprocessing.sh).
 2. **fmri preprocessing** fMRI were preprocessed with following steps: drop first ten TRs and reorient, motion correction with SBRef, distortion correction, SBRef to anatomical registration, registration to BCP age-specific template and then to common template, smoothing, detrend & nuisance regressing, bandpass filtering, and scrubbing. Details can be found in the manuscript and the [script](https://github.com/QionglingLi/baby_functional_connectome/blob/main/code/fMRI_Preprocessing.sh).    
-3. **FCS analysis** FCS were computed at the voxel level
+3. **FCS analysis** FCS were computed at the voxel level. The gray matter mask were predefined by applying a threshold to the gray matter probability template of 6 months and can be found [here](https://github.com/QionglingLi/baby_functional_connectome/blob/main/data/BCP-06M-GM_2mm.nii.gz).
 5. **graph theory measures computation** 
 6. **graph theory measures analysis**
 7. **growth trajecotry fitting**
