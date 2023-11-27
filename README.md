@@ -1,3 +1,5 @@
+![image](https://github.com/QionglingLi/baby_functional_connectome/assets/49176743/1bbb9da5-ca5c-4203-8c98-4b810602eb08)
+
 # baby_functional_connectome
 This repository provides data and relevant codes & toolbox used in our paper 'Development of Segregation and Integration of Functional Connectomes during the First 1000 Days'.
 # overview
@@ -21,7 +23,7 @@ Please use the “add path” method in MATLAB, "pip install" method in Python a
     Gene analysis and figure codes are all from Zhilei Xu's work "Meta-connectomic analysis maps consistent, reproducible, and transcriptionally relevant functional connectome hubs in the human brain" pusblised in the Communications Biology.
 The code link is [here](https://github.com/zhileixu/FunctionalConnectomeHubs/tree/main/Figure6/Figure6a) & [here](https://github.com/zhileixu/FunctionalConnectomeHubs/tree/main/Figure6/Figure6b).
 8. **visualization**
-    The cortical surface visualization in this work were using the [BrainNet Viewer](http://www.nitrc.org/projects/bnv/) software. The cortical surface file is [here](https://github.com/QionglingLi/baby_functional_connectome/blob/main/data/BCP_06month.nv).
+    Visualization on cortical surface in this work were using the [BrainNet Viewer](http://www.nitrc.org/projects/bnv/) software. The cortical surface file is [here](https://github.com/QionglingLi/baby_functional_connectome/blob/main/data/BCP_06month.nv).
    
 # citation
 please cite us as follows:
