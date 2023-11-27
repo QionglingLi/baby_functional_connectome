@@ -27,3 +27,6 @@ The code link is [here](https://github.com/zhileixu/FunctionalConnectomeHubs/tre
    
 ## Citation
 please cite us as follows:
+
+## Contact
+Any question or problem, please contact qiongling0212@126.com
