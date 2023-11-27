@@ -29,4 +29,4 @@ The code link is [here](https://github.com/zhileixu/FunctionalConnectomeHubs/tre
 please cite us as follows:
 
 ## Contact
-Any question or problem, please contact qiongling0212@126.com
+Any question, please contact qiongling0212@126.com
