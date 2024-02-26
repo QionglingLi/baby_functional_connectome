@@ -66,8 +66,11 @@ theme_classic()
 for (voxel in 2:10) {
   myplot <- myplot+
     geom_line(aes_(y=yy[,voxel], x = scan_age[order(scan_age)]), colour=cols[voxel]) + 
-    labs(y = expression(FCs), x = expression(scan_age))
-  theme_classic()
+    labs(y = expression(FCs), x = expression(scan_age)) +
+    theme_bw() + 
+    scale_x_continuous(breaks = c(30, 40, 64, 88, 136, 184), labels=c("30w","40w","6m","1yr","2yr","3yr"))
 }
 myplot <- myplot+
-  scale_colour_manual("",values=cols, breaks=names(cols))
+  scale_colour_manual("",values=cols, breaks=names(cols)) +
+  theme_bw() + 
+  scale_x_continuous(breaks = c(30, 40, 64, 88, 136, 184), labels=c("30w","40w","6m","1yr","2yr","3yr"))
