@@ -48,18 +48,18 @@ for i = 1:numel(xVariableNames)
         lm                                              = fitlm(y,y_pred);
         y_fit                                           = predict(lm, y);
         
-        f = figure;
-        scatter(y, y_pred,'filled');
+        f                                               = figure;
+        scatter                                         (y, y_pred,'filled');
         hold on;
-        plot(y, y_fit, 'r', 'LineWidth', 2);
+        plot                                            (y, y_fit, 'r', 'LineWidth', 2);
         
-        title(strcat('Predict'," ",yname{1}," ",'using'," ",xVariableName{1}));
-        xlabel('Actual values');
-        ylabel('Predicted values');
+        title                                           (strcat('Predict'," ",yname{1}," ",'using'," ",xVariableName{1}));
+        xlabel                                          ('Actual values');
+        ylabel                                          ('Predicted values');
         hold off;
         
-        saveas(f,strcat('~\cognition\GlobalVarsPermutation\',xVariableName{1},'_',yname{1},'_scatter.tiff'))
-        print(strcat('~\cognition\GlobalVarsPermutation\',xVariableName{1},'_',yname{1},'_scatter.pdf'), '-dpdf', ['-r' '600'],'-bestfit')
+        saveas                                          (f,strcat('~\cognition\GlobalVarsPermutation\',xVariableName{1},'_',yname{1},'_scatter.tiff'))
+        print                                           (strcat('~\cognition\GlobalVarsPermutation\',xVariableName{1},'_',yname{1},'_scatter.pdf'), '-dpdf', ['-r' '600'],'-bestfit')
         
     end
 end
@@ -77,17 +77,17 @@ for i = 1:numel(xVariableNames)
         pValue_r(i, b)                                  = mean(permuted_r > observed_r);
         
         % plot hist
-        f                                           = figure;
-        histfit                                     (permuted_r);
-        line                                        ([observed_r observed_r],[0 300],'linewidth',1.5);
+        f                                               = figure;
+        histfit                                         (permuted_r);
+        line                                            ([observed_r observed_r],[0 300],'linewidth',1.5);
 %         ylim                                        ([0 90]);
-        saveas(f,strcat('~\cognition\GlobalVarsPermutation\',xVariableName{1},'_',yname{1},'_hist.tiff'))
-        print(strcat('~\cognition\GlobalVarsPermutation\',xVariableName{1},'_',yname{1},'_hist.pdf'), '-dpdf', ['-r' '600'],'-bestfit')
+        saveas                                          (f,strcat('~\cognition\GlobalVarsPermutation\',xVariableName{1},'_',yname{1},'_hist.tiff'))
+        print                                           (strcat('~\cognition\GlobalVarsPermutation\',xVariableName{1},'_',yname{1},'_hist.pdf'), '-dpdf', ['-r' '600'],'-bestfit')
         
     end
 end
-save('~\cognition\pValue_r_GlobalVars.mat','pValue_r')
-save('F:\OneDrive - 北京师范大学\project2\cognition\r_GlobalVars.mat','rvalues')
+save                                                    ('~\cognition\pValue_r_GlobalVars.mat','pValue_r')
+save                                                    ('~\cognition\r_GlobalVars.mat','rvalues')
 % save('F:\OneDrive - 北京师范大学\project2\cognition\GlobalVars.mat')
 
 fprintf('Correlation coefficient r p-values:\n');
@@ -106,14 +106,14 @@ caxis([-0.15, 0.15]);
 [numRows, numCols] = size(rvalues);
 for row = 1:numRows
     for col = 1:numCols
-        pValText                                    = sprintf('p=%.3f', pValue_r(row, col));
-        text                                        (col, row, pValText, 'HorizontalAlignment', 'center', ...
-                                                    'VerticalAlignment', 'middle', 'Color', 'k', 'FontSize', 8);
+        pValText                                        = sprintf('p=%.3f', pValue_r(row, col));
+        text                                            (col, row, pValText, 'HorizontalAlignment', 'center', ...
+                                                            'VerticalAlignment', 'middle', 'Color', 'k', 'FontSize', 8);
     end
 end
 
-set                                                 (gca, 'XTick', 1:numel(beha_names), 'XTickLabel', beha_names);
-set                                                 (gca, 'YTick', 1:numel(xVariableNames), 'YTickLabel', xVariableNames);
+set                                                     (gca, 'XTick', 1:numel(beha_names), 'XTickLabel', beha_names);
+set                                                     (gca, 'YTick', 1:numel(xVariableNames), 'YTickLabel', xVariableNames);
 
-saveas(gcf,'F:\OneDrive - 北京师范大学\project2\cognition\rvalues.tiff')
-print('F:\OneDrive - 北京师范大学\project2\cognition\rvalues.pdf', '-dpdf', ['-r' '600'],'-bestfit')
+saveas                                                  (gcf,'~\cognition\rvalues.tiff')
+print                                                   ('~\cognition\rvalues.pdf', '-dpdf', ['-r' '600'],'-bestfit')
