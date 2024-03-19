@@ -88,7 +88,6 @@ for i = 1:numel(xVariableNames)
 end
 save                                                    ('~\cognition\pValue_r_GlobalVars.mat','pValue_r')
 save                                                    ('~\cognition\r_GlobalVars.mat','rvalues')
-% save('F:\OneDrive - 北京师范大学\project2\cognition\GlobalVars.mat')
 
 fprintf('Correlation coefficient r p-values:\n');
 disp(pValue_r);
