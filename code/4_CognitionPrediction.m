@@ -1,4 +1,4 @@
-paras_cognition                                         = readtable('F:\OneDrive - 北京师范大学\project2\paras_cognition.csv');
+paras_cognition                                         = readtable('~\paras_cognition.csv');
 
 xVariableNames                                          = {'meanFCS', 'Cp', 'efficiency','modularity','withinFC'}; 
 beha_names                                              = {'Cognitive', 'Language', 'Motor'};
