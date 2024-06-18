@@ -1,5 +1,5 @@
 # Baby_functional_connectome
-This repository provides data and relevant codes & toolbox used in our paper 'Development of Segregation and Integration of Functional Connectomes during the First 1000 Days'.
+This repository provides data and relevant codes & toolbox used in our paper 'Development of Segregation and Integration of Functional Connectomes during the First 1000 Days', Cell Reports 43.5 (2024).
 ## Overview
 Content includes standalone software, source code, and demo data. Due to the large size of the analyzed data, we only provide a small portion of the data needed for validating the code. The project is structured into four parts corresponding to the major analyses in the article, including functional connectivity strength analysis, clustering coefficient & efficiency analysis, module analysis and gene expression analysis. Due to the file sizes exceeding the limit allowed by GitHub, the script relavent files and data can be found in https://pan.bnu.edu.cn/l/N1uFm7. The demo file size is 2.73G.
 ## Original data
@@ -26,7 +26,7 @@ The code link is [here](https://github.com/zhileixu/FunctionalConnectomeHubs/tre
     Visualization on cortical surface in this work were using the [BrainNet Viewer](http://www.nitrc.org/projects/bnv/) (v1.7) software. The cortical surface file is [here](https://github.com/QionglingLi/baby_functional_connectome/blob/main/data/BCP_06month.nv).
    
 ## Citation
-please cite us as follows:
+please cite us as follows:Li, Qiongling, et al. "Development of segregation and integration of functional connectomes during the first 1,000 days." Cell Reports 43.5 (2024).
 
 ## Contact
 Any question, please contact qiongling0212@126.com
