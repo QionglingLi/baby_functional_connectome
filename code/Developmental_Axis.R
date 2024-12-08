@@ -17,6 +17,7 @@ Data$site <- as.factor(Data$site)
 sex=Data$sex
 site=Data$site
 mFD=Data$mFD
+
 Len=nrow(Data)
 
 cols <- magma(10)[matrix(1:10)]
