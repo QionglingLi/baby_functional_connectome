@@ -21,7 +21,6 @@ Please use the “add path” method in MATLAB, and "install.packages()" method 
     The developmental trajectories were fitted by generalized additive mixed model (GAMM) in R (version 4.2.3). The dependent package is mgcv (version 1.8-42). The Gaussian random field (GRF) correction for the voxel level analysis were using the toolbox [SeeCAT](https://www.nitrc.org/projects/seecat/) (20230518_beta).
 7. **Cognition prediction**
    Cognition scores were predicted using support vector regression and the significance was determined by 1,000 times permutation. Codes [here](https://github.com/QionglingLi/baby_functional_connectome/blob/main/code/4_CognitionPrediction.m).
-The code link is [here]
 8. **Gene analysis**
     Gene analysis and figure codes are all from Zhilei Xu's work "Meta-connectomic analysis maps consistent, reproducible, and transcriptionally relevant functional connectome hubs in the human brain" pusblised in the Communications Biology.
 The code link is [here](https://github.com/zhileixu/FunctionalConnectomeHubs/tree/main/Figure6/Figure6a) & [here](https://github.com/zhileixu/FunctionalConnectomeHubs/tree/main/Figure6/Figure6b).
