@@ -1,7 +1,7 @@
 # Baby_functional_connectome
 This repository provides data and relevant codes & toolbox used in our paper 'Development of Segregation and Integration of Functional Connectomes during the First 1000 Days', Cell Reports 43.5 (2024).
 ## Overview
-Content includes standalone software, source code, and demo data. Due to the large size of the analyzed data, we only provide a small portion of the data needed for validating the code. The project is structured into four parts corresponding to the major analyses in the article, including functional connectivity strength analysis, clustering coefficient & efficiency analysis, module analysis and gene expression analysis. Due to the file sizes exceeding the limit allowed by GitHub, the script relavent files and data can be found in https://pan.bnu.edu.cn/l/N1uFm7. The demo file size is 2.73G.
+Content includes standalone software, source code, and demo data. Due to the large size of the analyzed data, we only provide a small portion of the data needed for validating the code. The project is structured into five parts corresponding to the major analyses in the article, including functional connectivity strength analysis, clustering coefficient & efficiency analysis, module analysis and gene expression analysis. Due to the file sizes exceeding the limit allowed by GitHub, the script relavent files and data can be found in https://pan.bnu.edu.cn/l/N1uFm7. The demo file size is 2.73G.
 ## Original data
 The dHCP data used in this study can be downloaded from https://biomedia.github.io/dHCP-release-notes/download.html and the BCP data can be downloaded from https://nda.nih.gov/edit_collection.html?id=2848 with requesting access.
 ## Installation
@@ -18,11 +18,14 @@ Please use the “add path” method in MATLAB, and "install.packages()" method 
 5. **Graph theory measures analysis**
     The principal development axis of graph theoretical measures were analyzed using codes [here](https://github.com/QionglingLi/baby_functional_connectome/blob/main/code/2_GraphTheory_Analysis.m).
 6. **Growth trajectory fitting**
-    The developmental trajectories were fitted by generalized additive mixed model (GAMM) in R (version 4.2.3). The dependent package is mgcv (version 1.8-42). The Gaussian random field (GRF) correction for the voxel level analysis were using the toolbox [SeeCAT](https://www.nitrc.org/projects/seecat/) (20230518_beta). 
-7. **Gene analysis**
+    The developmental trajectories were fitted by generalized additive mixed model (GAMM) in R (version 4.2.3). The dependent package is mgcv (version 1.8-42). The Gaussian random field (GRF) correction for the voxel level analysis were using the toolbox [SeeCAT](https://www.nitrc.org/projects/seecat/) (20230518_beta).
+7. **Cognition prediction**
+   Cognition scores were predicted using support vector regression and the significance was determined by 1,000 times permutation. Codes [here](https://github.com/QionglingLi/baby_functional_connectome/blob/main/code/4_CognitionPrediction.m).
+The code link is [here]
+8. **Gene analysis**
     Gene analysis and figure codes are all from Zhilei Xu's work "Meta-connectomic analysis maps consistent, reproducible, and transcriptionally relevant functional connectome hubs in the human brain" pusblised in the Communications Biology.
 The code link is [here](https://github.com/zhileixu/FunctionalConnectomeHubs/tree/main/Figure6/Figure6a) & [here](https://github.com/zhileixu/FunctionalConnectomeHubs/tree/main/Figure6/Figure6b).
-8. **Visualization**
+9. **Visualization**
     Visualization on cortical surface in this work were using the [BrainNet Viewer](http://www.nitrc.org/projects/bnv/) (v1.7) software. The cortical surface file is [here](https://github.com/QionglingLi/baby_functional_connectome/blob/main/data/BCP_06month.nv).
    
 ## Citation
