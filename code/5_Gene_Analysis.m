@@ -106,9 +106,9 @@ writecell                                       (unique(rows_metadata.gene_symbo
 % [~,sort_ind]                            = sort(q(q<0.05));
 % orderedgenes                            = selectedgenes(sort_ind);
 % 
-% writecell(orderedgenes,'F:\OneDrive - 北京师范大学\project2\Genes\OrderedGenes1.csv')
-% writecell(selectedgenes,'F:\OneDrive - 北京师范大学\project2\Genes\SelectedGenes1.csv')
-% writecell(unique(rows_metadata.gene_symbol),'F:\OneDrive - 北京师范大学\project2\Genes\AllGenes.csv')
+% writecell(orderedgenes,'~\Genes\OrderedGenes1.csv')
+% writecell(selectedgenes,'~\Genes\SelectedGenes1.csv')
+% writecell(unique(rows_metadata.gene_symbol),'~\Genes\AllGenes.csv')
 
 % removed genes with less than 6 time point in samples of donors
 ReExpressionData_Sig                            = ExpressionData_Sig;
@@ -117,8 +117,8 @@ ReExpressionData_NonSig                         = ExpressionData_NonSig;
 ReExpressionData_NonSig(:,removeid)             = [];
 
 ZExpressionData                                 = zscore([ReExpressionData_Sig; ReExpressionData_NonSig]);
-ZExpressionData_Sig                             = ZExpressionData(1:61,:);
-ZExpressionData_NonSig                          = ZExpressionData(62:end,:);
+ZExpressionData_Sig                             = ZExpressionData(1:size(ReExpressionData_Sig,1),:);
+ZExpressionData_NonSig                          = ZExpressionData(size(ReExpressionData_Sig,1)+1:end,:);
 figure; imagesc(ZExpressionData); colormap(cmap)
 saveas                                          (gcf,'~\Genes\figures\expression_matrix.tiff')
 print                                           (gcf, '~\Genes\figures\expression_matrix.pdf','-dpdf', ['-r' '600'],'-bestfit')
